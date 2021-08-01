@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+  <head th:replace="template :: header('Order Success')"> </head>
+  <body>
+    <nav th:replace="template :: nav(${cartCount})"></nav>
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+        
+      <h3>Thank for your Order</h3>
+      <a class="btn btn-primary" th:href="@{/}" role="button"
+        >Continue to shop</a>
+        </div>
+        </div>
+    </div>
+  </body>
+</html>

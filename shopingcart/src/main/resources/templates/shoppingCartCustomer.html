@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head th:replace="template :: header('Customer Information')">
+</head>
+<body>
+  <nav th:replace="template :: nav(${cartCount})"></nav>
+  <div class="container">
+    <h3>Enter Customer Information</h3>
+    <form th:action="@{/confirm}" method="post" th:object="${customer}">
+      <table>
+        <tr>
+          <td>Name *</td>
+          <td><input th:field="*{name}" /></td>
+          <td>
+            <span
+              class="error-message"
+              th:if="${#fields.hasErrors('name')}"
+              th:errors="*{name}"
+              >..</span
+            >
+          </td>
+        </tr>
+        <tr>
+          <td>Email *</td>
+          <td><input th:field="*{email}" /></td>
+          <td>
+            <span
+              class="error-message"
+              th:if="${#fields.hasErrors('email')}"
+              th:errors="*{email}"
+              >..</span
+            >
+          </td>
+        </tr>
+        <tr>
+          <td>Phone *</td>
+          <td><input th:field="*{phone}" /></td>
+          <td>
+            <span
+              class="error-message"
+              th:if="${#fields.hasErrors('phone')}"
+              th:errors="*{phone}"
+              >..</span
+            >
+          </td>
+        </tr>
+        <tr>
+          <td>Address *</td>
+          <td><input th:field="*{address}" /></td>
+          <td>
+            <span
+              class="error-message"
+              th:if="${#fields.hasErrors('address')}"
+              th:errors="*{address}"
+              >..</span
+            >
+          </td>
+        </tr>
+
+        
+      </table>
+      <button type="submit" class="btn btn-primary">Confirm</button>
+    </form>
+  </body>
+</html>
